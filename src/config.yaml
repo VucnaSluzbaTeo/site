@@ -1,7 +1,7 @@
 site:
   name: Vučna služba Teo
-  site: 'http://localhost:4321/'
-  base: '/'
+  site: 'https://VucnaSluzbaTeo.github.io'
+  base: '/site'
   trailingSlash: false
 
   googleSiteVerificationId: null
