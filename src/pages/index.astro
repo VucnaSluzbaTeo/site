@@ -1,0 +1,78 @@
+---
+import PageLayout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Button from '~/components/ui/Button.astro';
+import type { MetaData } from '~/types';
+import Gallery from '~/components/widgets/Gallery.astro';
+import About from '~/components/custom/About.astro';
+import Services from '~/components/custom/Services.astro';
+import Reviews from '~/components/custom/Reviews.astro';
+
+export interface Props {
+  metadata?: MetaData;
+}
+
+const metadata = {
+  title: 'Vučna Služba Teo',
+};
+---
+
+<PageLayout metadata={metadata}>
+  <Hero2>
+    <Fragment slot="title">
+      <span class="dark:text-slate-200 highlight">Pomoč na cesti</span>
+      <span class="text-accent">24/7</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        Unlock boundless creativity at your fingertips: your gateway to innovative design.
+      </span>
+       Download now and embark on a journey to elevate your projects like never before.
+    </Fragment>
+
+    <Fragment slot="actions">
+      <div class="flex max-w-sm gap-4">
+        <Button
+          variant="primary"
+          href={'tel:+385955039442'}
+          text="Nazovite odmah"
+          icon="tabler:phone"
+          iconClass="phone-fill"
+          class="w-full sm:mb-0"
+        />
+      </div>
+    </Fragment>
+  </Hero2>
+
+  <About id="about">
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-slate-200 sm:text-3xl mb-2">O nama</h3>
+      <p>
+        Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each
+        pixel becomes a brushstroke in the canvas of imagination.
+      </p>
+      <br />
+      <p>
+        I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate
+        details of typography, or the vibrant hues of nature during my outdoor escapades.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-page2 dark:bg-page2"></div>
+    </Fragment>
+  </About>
+
+  <Reviews id="reviews" />
+
+  <Services>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-page2 dark:bg-page2"></div>
+    </Fragment>
+  </Services>
+
+  <Gallery />
+</PageLayout>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>

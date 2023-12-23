@@ -1,0 +1,29 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const { title, details } = Astro.props;
+---
+
+<div class="accordion group relative rounded-md border bg-page" style="border-color: var(--aw-color-bg-page2);">
+  <button
+    class="accordion__button flex w-full flex-1 items-center justify-between gap-2 p-3 text-left font-medium transition hover-accent sm:px-4 dark:text-slate-200"
+    type="button"
+    id={`${title} accordion menu button`}
+    aria-expanded="false"
+    aria-controls={`${title} accordion menu content`}
+  >
+    {title}
+    <Icon name="tabler:chevron-down" class="accordion__chevron h-7 w-7 shrink-0 transition-transform" />
+  </button>
+
+  <div
+    id={`${title} accordion menu content`}
+    aria-labelledby={`${title} accordion menu button`}
+    class="accordion__content hidden max-h-0 overflow-hidden px-3 transition-all duration-300 ease-in-out sm:px-4 border-t"
+    style="border-color: var(--aw-color-bg-page2);"
+  >
+    <p class="prose mb-4 mt-1 max-w-full transition-[height] dark:text-slate-200">
+      {details}
+    </p>
+  </div>
+</div>

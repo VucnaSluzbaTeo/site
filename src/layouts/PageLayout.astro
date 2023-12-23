@@ -1,0 +1,38 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Footer from '~/components/widgets/Footer.astro';
+import type { MetaData } from '~/types';
+
+export interface Props {
+  metadata?: MetaData;
+}
+
+const { metadata = {} } = Astro.props;
+---
+
+<Layout metadata={metadata}>
+  <Header
+    links={[
+      { text: 'Naslovna', href: '#' },
+      { text: 'O nama', href: '#about' },
+      { text: 'Recenzije', href: '#reviews' },
+      { text: 'Galerija', href: '#gallery' },
+    ]}
+    isSticky
+    showToggleTheme
+  />
+
+  <main>
+    <slot />
+  </main>
+
+  <Footer
+    socialLinks={[
+      { ariaLabel: 'Maps', icon: 'tabler:map-pin', href: 'https://maps.app.goo.gl/TEDrY8tnMhDkCnC98' },
+      { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://facebook.com/teo.ivancic' },
+    ]}
+  />
+</Layout>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>

@@ -1,0 +1,80 @@
+---
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { Icon } from 'astro-icon/components';
+
+const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } = Astro.props;
+
+function getDate(date: Date) {
+  return date.toLocaleDateString('hr-HR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
+const reviews = [
+  {
+    iconColor: 'bg-orange-400',
+    name: 'Josip Ante Cindrić',
+    date: getDate(new Date(Date.UTC(2023, 11, 11))),
+    stars: 5,
+    review: 'Došao 15 minuta nakon poziva. Odlična usluga!',
+    href: 'https://g.co/kgs/gwrmJA',
+  },
+  {
+    iconColor: 'bg-lime-500',
+    name: 'Gana Perić',
+    date: getDate(new Date(Date.UTC(2023, 11, 11))),
+    stars: 5,
+    review:
+      'Brz i efikasan.\nNakon što mi je auto stalo došao u manje od 30min.\nJako ugodan i susretljiv vozač. Svaka čast 💪',
+    href: 'https://g.co/kgs/YDFmKJ',
+  },
+  {
+    iconColor: 'bg-teal-400',
+    name: 'Pero Ivić',
+    date: getDate(new Date(Date.UTC(2023, 11, 11))),
+    stars: 4,
+    review: 'Fenomenalna usluga, Teo nam je spasio dan!',
+    href: 'https://g.co/kgs/YDFmKJ',
+  },
+];
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <Headline title="Recenzije" subtitle="Ponosimo se konstantnim zadovoljstvom naših klijenata." />
+  <div class="flex flex-row flex-wrap justify-center gap-10 md:gap-16">
+    {
+      (reviews || []).map(({ iconColor, name, date, stars, review, href }) => (
+        <a {href}>
+          <div class="flex flex-col min-h-[12rem] gap-2 w-72 justify-start p-4 md:p-6 md:pr-4 md:pt-4 rounded-md shadow-md dark:bg-white dark:shadow-none dark:border dark:border-slate-600">
+            <span class="flex flex-row gap-2 justify-start items-center">
+              <div
+                class={`flex justify-center items-center rounded-full ${iconColor} h-8 aspect-square font-medium text-white dark:text-white text-lg`}
+              >
+                {name.split(' ')[0][0]}
+              </div>
+              <div class="flex flex-col">
+                <h2 class="text-lg font-semibold leading-6 dark:text-black">{name}</h2>
+                <p class="text-sm text-gray-500 dark:text-gray-500">{date}</p>
+              </div>
+              <Icon name="flat-color-icons:google" class={'ml-auto h-6 w-6 self-start mt-2'} />
+            </span>
+            <span class="flex flex-row gap-0.5">
+              {Array.from({ length: 5 }, (_, index) => (
+                <svg class="h-5" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7.5,0l-2,5h-5l4,3.5l-2,6l5-3.5l5,3.5l-2-6l4-3.5h-5L7.5,0z"
+                    fill={index + 1 <= stars ? 'rgb(250, 187, 5)' : 'rgb(218, 220, 224)'}
+                  />
+                </svg>
+              ))}
+            </span>
+            <p class="text-black dark:text-black">{review}</p>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</WidgetWrapper>

@@ -1,0 +1,56 @@
+site:
+  name: Vučna služba Teo
+  site: 'http://localhost:4321/'
+  base: '/'
+  trailingSlash: false
+
+  googleSiteVerificationId: null
+
+# Default SEO metadata
+metadata:
+  title:
+    default: Vučna služba Teo
+  description: 'Web stranica Vučne službe Teo'
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: Vučna služba Teo
+    images:
+      - url: '~/assets/images/gallery/1.jpeg'
+        width: 1200
+        height: 628
+      - url: '~/assets/images/gallery/2.jpeg'
+        width: 1200
+        height: 628
+      - url: '~/assets/images/gallery/3.jpeg'
+        width: 1200
+        height: 628
+      - url: '~/assets/images/gallery/4.jpeg'
+        width: 1200
+        height: 628
+      - url: '~/assets/images/gallery/5.jpeg'
+        width: 1200
+        height: 628
+      - url: '~/assets/images/gallery/6.jpeg'
+        width: 1200
+        height: 628
+      - url: '~/assets/images/gallery/7.jpeg'
+        width: 1200
+        height: 628
+      - url: '~/assets/images/gallery/8.jpeg'
+        width: 1200
+        height: 628
+      - url: '~/assets/images/gallery/faq.jpeg'
+        width: 1200
+        height: 628
+    type: website
+
+i18n:
+  language: en
+  textDirection: ltr
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null # or "G-XXXXXXXXXX"

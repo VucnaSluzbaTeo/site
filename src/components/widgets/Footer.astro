@@ -1,0 +1,61 @@
+---
+import { Icon } from 'astro-icon/components';
+import { getPermalink } from '~/utils/permalinks';
+
+interface Link {
+  text?: string;
+  href?: string;
+  ariaLabel?: string;
+  icon?: string;
+}
+
+export interface Props {
+  socialLinks: Array<Link>;
+  theme?: string;
+}
+
+const { socialLinks = [], theme = 'light' } = Astro.props;
+---
+
+<footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-gray-200 dark:border-slate-800 not-prose']}>
+  <div class="dark:bg-page2 bg-page2 absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-200">
+    <div
+      class="flex flex-col items-center text-center md:text-start md:flex-row-reverse md:justify-between py-6 md:py-8"
+    >
+      {
+        socialLinks?.length ? (
+          <ul class="flex mb-4 -ml-2 md:ml-4 md:mb-0 rtl:ml-0 rtl:-mr-2 rtl:md:ml-0 rtl:md:mr-4">
+            {socialLinks.map(({ ariaLabel, href, text, icon }) => (
+              <li>
+                <a
+                  class="text-muted dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                  aria-label={ariaLabel}
+                  href={href}
+                >
+                  {icon && <Icon name={icon} class="w-5 h-5" />}
+                  <Fragment set:html={text} />
+                </a>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          ''
+        )
+      }
+      <div class="text-sm mr-4 dark:text-slate-300 flex flex-col gap-1">
+        <span>
+          Autorska prava © Vučna Služba Teo Ivančić, obrt za usluge vučne službe, vl. Teo Ivančić. Sva prava pridržana.
+        </span>
+        <span>
+          <a
+            class="text-muted hover:text-gray-700 dark:text-gray-300 hover:underline transition duration-150 ease-in-out mr-2 rtl:mr-0 rtl:ml-2"
+            href={getPermalink('/terms')}
+          >
+            Uvjeti korištenja i Politika privatnosti
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>

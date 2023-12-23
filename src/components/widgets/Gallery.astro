@@ -1,0 +1,40 @@
+---
+import { adaptOpenGraphImages } from '~/utils/images';
+import { METADATA } from '~/utils/config';
+import Headline from '~/components/ui/Headline.astro';
+
+const { images } = await adaptOpenGraphImages(METADATA.openGraph, Astro.site);
+---
+
+<section id="gallery" class="gallery py-20" aria-hidden="true">
+  <Headline title={'Galerija'} />
+  <swiper-container
+    space-between="70"
+    breakpoints='{"640": {"slidesPerView": 2}, "1000": {"slidesPerView": 3}, "1400": {"slidesPerView": 4}}'
+    nextButton=".swiper-button-next"
+    prevButton=".swiper-button-prev"
+    pagination="true"
+    pagination-clickable="true"
+    navigation="true"
+    keyboard="true"
+    mousewheel="false"
+    loop="true"
+    autoplay="true"
+    style="--swiper-pagination-color: var(--aw-color-secondary); --swiper-navigation-color: var(--aw-color-secondary);"
+  >
+    {
+      (images || []).map(({ url }) => {
+        return (
+          <swiper-slide class="flex justify-center items-center">
+            <img
+              class="rounded-lg block h-auto max-h-80 object-cover object-center aspect-square"
+              src={url}
+              alt=""
+              loading="lazy"
+            />
+          </swiper-slide>
+        );
+      })
+    }
+  </swiper-container>
+</section>

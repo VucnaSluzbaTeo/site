@@ -1,0 +1,55 @@
+---
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Accordion from '~/components/ui/Accordion.astro';
+// import { adaptOpenGraphImages } from '~/utils/images';
+// import { METADATA } from '~/utils/config';
+
+const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } = Astro.props;
+
+const items = [
+  {
+    title: 'Lorem Ipsum',
+    details:
+      "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+    expanded: true,
+  },
+  {
+    title: 'Lorem Ipsum',
+    details:
+      'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+  },
+  {
+    title: 'Lorem Ipsum',
+    details:
+      "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+  },
+  {
+    title: 'Lorem Ipsum',
+    details:
+      "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+  },
+  {
+    title: 'Lorem Ipsum',
+    details:
+      "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
+  },
+  {
+    title: 'Lorem Ipsum',
+    details:
+      "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+  },
+];
+
+// const { images } = await adaptOpenGraphImages(METADATA.openGraph, Astro.site);
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <!-- <Fragment slot="bg">
+    <img class="h-full w-full object-cover object object-center faq-backdrop" src={images[0].url} alt="" loading="lazy" />
+  </Fragment> -->
+  <Headline title="Često postavljana pitanja" />
+  <div class="flex flex-col gap-2 px-10">
+    {items.map(({ title, details }) => <Accordion {title} {details} />)}
+  </div>
+</WidgetWrapper>
