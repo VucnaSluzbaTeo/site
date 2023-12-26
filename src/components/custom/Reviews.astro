@@ -33,11 +33,12 @@ const reviews = [
   },
   {
     iconColor: 'bg-teal-400',
-    name: 'Pero Ivić',
-    date: getDate(new Date(Date.UTC(2023, 11, 11))),
-    stars: 4,
-    review: 'Fenomenalna usluga, Teo nam je spasio dan!',
-    href: 'https://g.co/kgs/YDFmKJ',
+    name: 'Nora Veselić',
+    date: getDate(new Date(Date.UTC(2023, 11, 13))),
+    stars: 5,
+    review:
+      'Auto neočekivano stalo na putu do Omiša, sva sreća našla ovu vučnu službu u blizini. Skroz strpljivi i susretljivi, svaka čast i hvala na pomoći!',
+    href: 'https://maps.app.goo.gl/keA72oEu4Tefhsdb6',
   },
 ];
 ---
@@ -47,7 +48,7 @@ const reviews = [
   <div class="flex flex-row flex-wrap justify-center gap-10 md:gap-16">
     {
       (reviews || []).map(({ iconColor, name, date, stars, review, href }) => (
-        <a {href}>
+        <a {href} target="_blank">
           <div class="flex flex-col min-h-[12rem] gap-2 w-72 justify-start p-4 md:p-6 md:pr-4 md:pt-4 rounded-md shadow-md dark:bg-white dark:shadow-none dark:border dark:border-slate-600">
             <span class="flex flex-row gap-2 justify-start items-center">
               <div
