@@ -1,7 +1,6 @@
 site:
   name: Vućna služba Teo
-  site: 'https://VucnaSluzbaTeo.github.io'
-  base: '/site'
+  site: 'https://vucna-sluzba-teo.com'
   trailingSlash: false
 
   googleSiteVerificationId: null
