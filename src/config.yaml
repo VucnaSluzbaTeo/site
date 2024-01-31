@@ -1,6 +1,6 @@
 site:
   name: Vućna služba Teo
-  site: 'https://vucna-sluzba-teo.com'
+  site: 'https://www.vucna-sluzba-teo.com'
   base: '/site'
   trailingSlash: false
 
