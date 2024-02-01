@@ -1,6 +1,7 @@
 site:
   name: Vućna služba Teo
   site: 'http://vucna-sluzba-teo.com'
+  base: '/'
   trailingSlash: false
 
   googleSiteVerificationId: null
