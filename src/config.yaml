@@ -1,5 +1,5 @@
 site:
-  name: Vućna služba Teo
+  name: Vučna služba Teo
   site: 'http://vucna-sluzba-teo.com'
   base: '/'
   trailingSlash: false
@@ -9,13 +9,13 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Vućna služba Teo
+    default: Vučna služba Teo
   description: 'Web stranica Vučne službe Teo'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: Vućna služba Teo
+    site_name: Vučna služba Teo
     images:
       - url: '~/assets/images/gallery/1.jpeg'
         width: 1200
