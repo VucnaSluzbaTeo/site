@@ -5,11 +5,11 @@ layout: '~/layouts/MarkdownLayout.astro'
 
 _Posljednja izmjena_: 10. veljače, 2024
 
-Posjetom vucna-sluzba-teo.com web stranice korisnik potvrđuje da je pročitao i da u cijelosti prihvaća uvjete korištenja. Također, korisnik potvrđuje da je u svakom trenutku upoznat s aktualnom verzijom Uvjeta korištenja i da ih u cijelosti prihvaća.
+Posjetom vucna-sluzba-teo.com web stranice korisnik potvrđuje da je pročitao i da u cijelosti prihvaća Uvjete korištenja. Također, korisnik potvrđuje da je u svakom trenutku upoznat s aktualnom verzijom Uvjeta korištenja i da ih u cijelosti prihvaća.
 
 ## Uvod
 
-Ova Obavijest o privatnosti namijenjena je osiguravanju transparentnosti i zaštite vaše privatnosti prilikom posjete našoj web stranici. Uzimamo vašu privatnost ozbiljno i ne prikupljamo vaše osobne podatke osim ako to izričito ne odobrite ili ih dobrovoljno ne pružite putem drugih kanala komunikacije.Za obradu osobnih podataka odgovoran je:
+Ova Obavijest o privatnosti namijenjena je osiguravanju transparentnosti i zaštite vaše privatnosti prilikom posjete našoj web stranici. Uzimamo vašu privatnost ozbiljno i ne prikupljamo vaše osobne podatke osim ako to izričito ne odobrite ili ih dobrovoljno ne pružite putem drugih kanala komunikacije. Za obradu osobnih podataka odgovoran je:
 
 TEO 98, obrt za uslugu vuče, vl. Teo Ivančić, Podstrana, 21312, Gospe U Siti 115.
 Kontakt: +385998872290
@@ -37,4 +37,4 @@ Imate pravo zatražiti pristup, ispravak ili brisanje vaših osobnih podataka ko
 
 ## Promjene obavijesti o privatnosti
 
-Vučna služba Teo zadržava pravo izmijeniti i dopuniti ovu politiku u bilo kojem trenutku, bez davanja bilo kakve obavijesti zainteresiranim osobama. Iz tog razloga preporuča se svim zainteresiranim osobama da redovito provjeravaju sadržaj naše web stranice radi informiranosti o sadržaju ove politike.
+Vučna služba Teo zadržava pravo izmijeniti i dopuniti ovu Politiku u bilo kojem trenutku, bez davanja bilo kakve obavijesti zainteresiranim osobama. Iz tog razloga preporuča se svim zainteresiranim osobama da redovito provjeravaju sadržaj naše web stranice radi informiranosti o sadržaju ove Politike.
